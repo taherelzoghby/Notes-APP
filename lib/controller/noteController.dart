@@ -44,6 +44,7 @@ class noteController extends GetxController {
     //to remove old text
     title.text = "";
     content.text = "";
+    char_count = 0.obs;
     //to get all notes when back
     getAllNotes();
     Get.back();
@@ -75,6 +76,7 @@ class noteController extends GetxController {
     //to remove old text
     title.text = "";
     content.text = "";
+    char_count = 0.obs;
     //to get all notes when back
     getAllNotes();
     Get.back();
