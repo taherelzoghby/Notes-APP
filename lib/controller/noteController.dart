@@ -48,6 +48,7 @@ class noteController extends GetxController {
     //to get all notes when back
     getAllNotes();
     Get.back();
+    update();
   }
 
   //delete note
@@ -70,8 +71,7 @@ class noteController extends GetxController {
       content: conte,
       date: DateFormat("yyyy-MM-dd – kk:mm").format(DateTime.now()),
     );
-    int res = await database.updateNote(note);
-    print(res);
+    await database.updateNote(note);
     characterCount(titl + conte);
     //to remove old text
     title.text = "";
@@ -80,6 +80,7 @@ class noteController extends GetxController {
     //to get all notes when back
     getAllNotes();
     Get.back();
+    update();
   }
 
   //get all notes
