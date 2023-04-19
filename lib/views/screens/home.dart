@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:no_tes/controller/noteController.dart';
 import 'package:no_tes/views/widgets/noTasks.dart';
+import 'package:no_tes/views/widgets/searchBar.dart';
 
 import '../widgets/showNotes.dart';
 
@@ -16,6 +17,10 @@ class home extends StatelessWidget {
         title: const Text("Notes"),
         centerTitle: true,
         actions: [
+          IconButton(
+              onPressed: () =>
+                  showSearch(context: context, delegate: searchBar()),
+              icon: Icon(Icons.search)),
           PopupMenuButton(
             icon: const Icon(Icons.more_vert),
             onSelected: (value) {
