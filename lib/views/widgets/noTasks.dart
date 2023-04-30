@@ -19,7 +19,6 @@ class noTasks extends StatelessWidget {
             'assets/images/note.svg',
             semanticsLabel: 'My SVG Image',
             height: MediaQuery.of(context).size.height * .2,
-            color: Colors.orange.withOpacity(.5),
           ),
           const SizedBox(height: 25),
           const Text(

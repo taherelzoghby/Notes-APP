@@ -28,7 +28,7 @@ class noteTile extends StatelessWidget {
         width: MediaQuery.of(context).size.width * .9,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(23),
-          color: Colors.white,
+          color: Colors.grey.withOpacity(.4),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),

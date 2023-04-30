@@ -21,8 +21,11 @@ class MyApp extends StatelessWidget {
       title: 'Notes',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.blue,
         textTheme: GoogleFonts.poppinsTextTheme(),
+        floatingActionButtonTheme:
+            FloatingActionButtonThemeData(backgroundColor: Colors.grey),
+        useMaterial3: true,
       ),
       home: home(),
       getPages: [
