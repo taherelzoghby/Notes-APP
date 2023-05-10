@@ -9,7 +9,7 @@ class showNotes extends StatelessWidget {
   final List<Note> notes;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return GridView.builder(
       itemCount: notes.length,
       itemBuilder: (context, index) {
         //save data in map to transfer to other page
@@ -39,6 +39,10 @@ class showNotes extends StatelessWidget {
           ),
         );
       },
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: MediaQuery.of(context).size.width <= 500 ? 1 : 2,
+        childAspectRatio: 2.3,
+      ),
     );
   }
 }

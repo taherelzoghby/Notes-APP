@@ -17,21 +17,21 @@ class noteTile extends StatelessWidget {
   final _cont = Get.find<noteController>();
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     bool isLandScape =
         MediaQuery.of(context).orientation == Orientation.landscape;
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding:
+          EdgeInsets.symmetric(horizontal: width * .03, vertical: height * .01),
       child: Container(
-        height: isLandScape
-            ? MediaQuery.of(context).size.height * .4
-            : MediaQuery.of(context).size.height * .17,
-        width: MediaQuery.of(context).size.width * .9,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(23),
           color: Colors.grey.withOpacity(.4),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          padding: EdgeInsets.symmetric(
+              horizontal: width * .06, vertical: height * .009),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -39,10 +39,7 @@ class noteTile extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    width: isLandScape
-                        ? MediaQuery.of(context).size.width * .85
-                        : MediaQuery.of(context).size.width * .72,
+                  Expanded(
                     child: Text(
                       title,
                       maxLines: 1,
