@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../adaptive/adaptiveTextField.dart';
+import '../../constants.dart';
+
 class contentTextField extends StatelessWidget {
   const contentTextField({
     super.key,
@@ -10,14 +13,12 @@ class contentTextField extends StatelessWidget {
   final bool read_only;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return adaptiveTextField(
       controller: content,
-      maxLines: 90,
-      readOnly: read_only,
-      decoration: const InputDecoration(
-        hintText: 'Start typing',
-        border: InputBorder.none,
-      ),
+      max_lines: 90,
+      read_only: read_only,
+      hint: 'Start typing',
+      os: Os(),
     );
   }
 }

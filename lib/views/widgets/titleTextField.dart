@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:no_tes/constants.dart';
+
+import '../../adaptive/adaptiveTextField.dart';
 
 class titleTextField extends StatelessWidget {
   const titleTextField({
@@ -11,14 +15,12 @@ class titleTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return adaptiveTextField(
       controller: title,
-      readOnly: read_only,
-      decoration: const InputDecoration(
-        hintText: 'Title',
-        hintStyle: TextStyle(fontSize: 19, fontWeight: FontWeight.w600),
-        border: InputBorder.none,
-      ),
+      read_only: read_only,
+      hint: 'Title',
+      style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600),
+      os: Os(),
     );
   }
 }

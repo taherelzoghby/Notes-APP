@@ -12,7 +12,7 @@ class adaptiveFloatingActionButton extends StatelessWidget {
   final void Function()? function;
   @override
   Widget build(BuildContext context) {
-    if (os != 'android')
+    if (os == 'android')
       return FloatingActionButton(
         onPressed: () => function!(),
         child: widget,
