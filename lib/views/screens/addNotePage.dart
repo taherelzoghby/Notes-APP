@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:no_tes/constants.dart';
 import 'package:no_tes/controller/noteController.dart';
 import 'package:get/get.dart';
+import '../../adaptive/adaptiveFloatingActionButton.dart';
 import '../widgets/contentTextField.dart';
 import '../widgets/titleTextField.dart';
 
@@ -32,9 +34,10 @@ class addNotePage extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _cont.insertNote(),
-        child: const Icon(Icons.done),
+      floatingActionButton: adaptiveFloatingActionButton(
+        os: Os(),
+        function: () => _cont.insertNote(),
+        widget: const Icon(Icons.done),
       ),
     );
   }

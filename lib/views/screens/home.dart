@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:no_tes/constants.dart';
 import 'package:no_tes/controller/noteController.dart';
 import 'package:no_tes/views/widgets/noTasks.dart';
 import 'package:no_tes/views/widgets/searchBar.dart';
 
+import '../../adaptive/adaptiveFloatingActionButton.dart';
 import '../widgets/showNotes.dart';
 
 class home extends StatelessWidget {
@@ -17,9 +19,10 @@ class home extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () =>
-                  showSearch(context: context, delegate: searchBar()),
-              icon: Icon(Icons.search)),
+            onPressed: () =>
+                showSearch(context: context, delegate: searchBar()),
+            icon: Icon(Icons.search),
+          ),
           PopupMenuButton(
             icon: const Icon(Icons.more_vert),
             onSelected: (value) {
@@ -48,9 +51,10 @@ class home extends StatelessWidget {
                 notes: _cont.notes,
               ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.toNamed('/addNotePage'),
-        child: const Icon(Icons.add),
+      floatingActionButton: adaptiveFloatingActionButton(
+        os: Os(),
+        widget: Icon(Icons.add),
+        function: () => Get.toNamed('/addNotePage'),
       ),
     );
   }
